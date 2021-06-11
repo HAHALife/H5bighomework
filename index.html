@@ -532,6 +532,7 @@ ul {
         </div>
         <div class="page">
             <ul id="page1">
+                <li><a href=""><</a></li>
                 <li><a href="">1</a></li>
             </ul>
         </div>
@@ -622,6 +623,7 @@ ul {
             var day = date.getDate();
             var hh = date.getHours();         
             var mm = date.getMinutes();
+            var ss = date.getSeconds();
             if (month >= 1 && month <= 9) {
                 month = "0" + month;
             }
@@ -634,7 +636,10 @@ ul {
             if (mm < 10) {
                 mm = "0" + mm;
             }
-            var now = year + "-" + month + "-" + day +  " " + hh + ":" + mm;
+            if (ss < 10) {
+                ss = "0" + ss;
+            }
+            var now = year + "-" + month + "-" + day +  " " + hh + ":" + mm + ":" + ss;
             return now;
         }  
         var time1 = time2();
@@ -692,6 +697,11 @@ ul {
                     newli.appendChild(newa);
                     page1.appendChild(newli);
                 }
+                var newli1 = document.createElement("li");
+                var newa1 = document.createElement("a");
+                newa1.innerHTML = ">";
+                newli1.appendChild(newa1);
+                page1.appendChild(newli1);
             }
             if(j / 3 > 9){
                 for(var z=1;z<3;z++){
@@ -711,6 +721,11 @@ ul {
                 newli.onclick = "set_page(this)";
                 newli.appendChild(newa);
                 page1.appendChild(newli);
+                var newli1 = document.createElement("li");
+                var newa1 = document.createElement("a");
+                newa1.innerHTML = ">";
+                newli1.appendChild(newa1);
+                page1.appendChild(newli1);
             }
         }
         var json1 = localStorage.getItem("data1"); 
