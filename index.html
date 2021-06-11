@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+    text-decoration: none;
+    color: white;
+}
+.head {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    display: flex;
+    color: white;
+    align-items: center;
+}
+.head img {
+    margin-left: 30px;
+}
+.head .big {
+    width: 30%;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+}
+.head .small {
+    margin-left: 20px;
+    width: 38%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.head .small {
+    margin-left: 20px;
+}
+.head .group1 {
+    color: rgba(255, 255, 255, 0.87);
+    display: flex;
+    align-items: center;
+}
+.head .star {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(images/xiaotubiao.png);
+    background-repeat: no-repeat;
+    background-position: -230px -25px;
+}
+.body1 .lyric {
+    display: inline-block;
+    margin-top: 60px;
+    margin-left: 5%;
+    width: 55%;
+    text-align: center;
+}
+.body1 h3 {
+    font-weight: normal;
+    font-size: 25px;
+}
+.body1 .lyric .ps1 {
+    width: 380px;
+    margin: 0 auto;
+    font-size: 14px;
+    display: flex;
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+}
+.ps1 span {
+    color: orange;
+}
+.lyric .ps2 {
+    margin-top: 5px;
+    font-size: 14px;
+}
+.lyric .mainl {
+    font-size: 14px;
+    height: 500px;
+    overflow: auto;
+    line-height: 40px;
+}
+.mainl::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 4px;
+ }
+ .mainl::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.2);
+ }
+ .mainl::-webkit-scrollbar-track {
+    border-radius: 4px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+ }
+.body1 .play {
+    position: absolute;
+    top: 180px;
+    left: 1100px;
+    display: inline-block;
+    margin: 0;
+}
+.play .border1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgb(174, 177, 179);
+    border-radius: 50%;
+}
+.play .border2 {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgb(174, 177, 179);
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5;
+}
+.play .border3 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    position:absolute;
+    top: 120px;
+    left: 120px;
+}
+@keyframes animation1 {
+    0% {
+        transform-origin: center;
+        transform: rotate(0deg);
+    }
+    100% {
+        transform-origin: center;
+        transform: rotate(360deg);
+    }
+}
+.play .cover {
+    display: inline-block;
+    background-image: url(images/fengmian.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: animation1;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+.progress_bar {
+    width: 450px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left:-100px;
+}
+.progress_bar .play_button {
+    background-image: url(images/play.jpg);
+    background-position: -162px 0px;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+}
+.progress_bar .progress {
+    width: 10px;
+    height: 10px;
+    background-image: url(images/play.jpg);
+    background-position: -23px 0;
+    position: absolute;
+    left: 50px;
+}
+.progress_bar .bar {
+    width: 300px;
+    height: 5px;
+    background-image: linear-gradient(90deg,rgb(187, 193, 197) 0%,rgb(187, 193, 197) 100%);
+    border-radius: 5px;
+}
+.progress_bar .playTime {
+    color: rgb(187, 193, 197);
+}
+.progress_bar .sound {
+    width: 22px;
+    height: 20px;
+    background-image: url(images/play.jpg);
+    background-position: -67px 0;
+}
+.play .download {
+    position: absolute;
+    top: 390px;
+    left: 20px;
+    width: 200px;
+    height: 38px;
+    background-image: url(images/play.jpg);
+    background-position: 0px -50px;
+}
+.download .download_btn {
+    width: 19px;
+    height: 18px;
+    background-image: url(images/play.jpg);
+    position: relative;
+    top: 9px;
+    left: 30px;
+}
+.download span {
+    font-size: 16px;
+    line-height: 40px;
+    position: relative;
+    top: -20px;
+    left: 53px;
+}
+.body2 .pinglun {
+    width: 60%;
+    margin-left: 18%;
+    margin-top: 100px;
+    color: rgb(100, 103, 105);
+    line-height: 50px;
+}
+.pinglun span {
+    font-size: small;
+    margin-left: 25px;
+}
+.discuss {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.discuss textarea {
+    border: 1px solid rgb(162, 165, 167);
+    color: rgb(162, 165, 167);
+    height: 100px;
+    width: 780px;
+}
+.pinglun .sub_pinglun {
+    display: flex;
+    justify-content: flex-end;
+}
+.pinglun #num {
+    font-size: 10px;
+    display: inline-block;
+    margin-right: 30px;
+}
+.pinglun .submit {
+    display: inline-block;
+    width: 65px;
+    height: 25px;
+    background-color: #ffcd2d;
+    color: white;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 10px;
+}
+.body2 .show {
+    width: 60%;
+    margin-left: 18%;
+    margin-top: 50px;
+}
+.show span:nth-child(1) {
+    color: rgb(100, 103, 105);
+}
+.show .inner {
+    height: 100px;
+    width: 60%px;
+    display: flex;
+    justify-content: space-between;
+}
+.show .right {
+    width: 790px;
+}
+.show .line1 {
+    display: flex;
+    justify-content: space-between;
+    height: 33%;
+}
+.line1 a {
+    color: black;
+    font-size: 10px;
+}
+.line1 span:nth-child(1) {
+    color: #ffcd2d;
+    font-size: 15px;
+}
+.show .line2 {
+    height: 52%;
+}
+.show .line3 {
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+.line3 span:nth-child(1) {
+    font-size: 10px;
+}
+.line3 span:nth-child(2) {
+    font-size: 12px;
+}
+.page {
+    width: 60%;
+    margin-left: 18%;
+    margin-top: 50px;
+}
+.page a {
+    color: white;
+}
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.page li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffcd2d;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 5px;
+}
+    </style>
+</head>
+<body>
+    <div class="head">
+        <img src="images/logo1.jpg" alt="logo" width="160px" height="70px">
+        <div class="big">
+            <a href="">首页</a>
+            <a href="">榜单</a>
+            <a href="">歌手</a>
+            <a href="">下载酷我客户端</a>
+        </div>
+        <div class="small">
+            
+            <div class="group1">
+                <div class="star"></div>
+                <a href="">美女秀</a>
+            </div>
+            <div class="group1">
+                <div class="star"></div>
+                <a href="">酷我耳机</a>
+            </div>
+            <div class="group1">
+                <div class="star"></div>
+                <a href="">VIP会员</a>
+            </div>
+            <a href="">i听</a>
+            <a href="">更多服务</a>
+            <a href="">登录</a>
+        </div>
+        <img src="images/sousuo.png" alt="sousuo" width="200px" height="30px">
+    </div>
+    <div class="body1">
+        <div class="lyric">
+            <h3>喜羊羊</h3>
+            <div class="ps1">
+                专辑：<span>儿歌大全</span>
+                歌手：<span>华语群星</span>
+                分享
+                <img src="images/pinglun.jpg" alt="" width="15px" height="15px">
+                评论
+            </div> 
+            <div class="ps2">
+                上传时间：2015-10-02
+                歌曲来源：民大相思湖网球社
+            </div>
+            <hr>   
+            <div class="mainl">
+                喜羊羊美羊羊懒羊羊沸羊羊 <br>               
+                慢羊羊软绵绵红太狼灰太狼<br>
+                别看我只是一只羊<br>
+                绿草因为我变得更香<br>
+                天空因为我变得更蓝<br>
+                白云因为我变得柔软<br>
+                别看我只是一只羊<br>
+                羊儿的聪明难以想象<br>
+                天再高心情一样奔放<br>
+                每天都追赶太阳<br>
+                有什么难题去牵绊我<br>
+                都不会去心伤<br>
+                有什么危险<br>
+                在我面前<br>
+                也不会去慌乱<br>
+                就算有狼群把我追捕<br>
+                也当作游戏一场<br>
+                在什么时间都爱开心<br>
+                笑容都会飞翔<br>
+                就算会摔倒<br>
+                站得起来<br>
+                永远不会沮丧<br>
+                在所有天气<br>
+                拥有叫人大笑的力量<br>
+                虽然我只是羊<br>
+                喜羊羊美羊羊懒羊羊沸羊羊<br>
+                慢羊羊软绵绵红太狼灰太狼<br>
+                别看我只是一只羊<br>
+                绿草因为我变得更香<br>
+                天空因为我变得更蓝<br>
+                白云变得更柔软<br>
+                有什么难题去牵绊我<br>
+                都不会去心伤<br>
+                有什么危险<br>
+                在我面前<br>
+                也不会去慌乱<br>
+                就算有狼群把我追捕<br>
+                也当作游戏一场<br>
+                在什么时间都爱开心<br>
+                笑容都会飞翔<br>
+                就算会摔倒站得起来<br>
+                永远不会沮丧<br>
+                在所有天气<br>
+                拥有叫人大笑的力量<br>
+                虽然我只是羊<br>
+                有什么难题去牵绊我<br>
+                都不会去心伤<br>
+                有什么危险<br>
+                在我面前<br>
+                也不会去慌乱<br>
+                就算有狼群把我追捕<br>
+                也当作游戏一场<br>
+                在什么时间都爱开心<br>
+                笑容都会飞翔<br>
+                就算会摔倒站得起来<br>
+                永远不会沮丧<br>
+                在所有天气<br>
+                拥有叫人大笑的力量<br>
+                虽然我只是羊<br>
+            </div>
+        </div>
+        <div class="play">
+            <div class="border1">
+                <div class="cover">
+                    <div class="border2">
+                    </div>
+                </div>
+                <div class="border3"></div>
+            </div>
+            <div class="progress_bar">
+                <audio preload="auto" id="mymusic">
+                    <source src="images/xiyangyang.mp3" type="audio/mp3">
+                </audio>
+                <div class="play_button"></div>
+                <div class="progress"></div>
+                <div class="bar"></div>
+                <div class="playTime">00:00</div>
+                <div class="sound"></div>
+            </div>
+            <div class="download">
+                <div class="download_btn"></div>
+                <span>免费下载这首歌</span>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="body2">
+        <div class="pinglun">
+            评论<span>1703条评论</span>
+            <hr>
+            <div class="discuss">
+                <img src="images/logo2.jpg" alt="">
+                <textarea onkeyup="wordStatic(this);" id="textArea" placeholder="分享你的音乐见解"></textarea>
+            </div>
+            <div class="sub_pinglun">
+                <div id="num">已输入0个字</div>
+                <div class="submit">评论</div>
+            </div>
+        </div>
+        <div class="show">
+            <span>精彩评论</span>
+            <hr>
+            <div class="inner">
+                <img src="images/logo2.jpg" width="60px" height="60px" alt="">
+                <div class="right">
+                    <div class="line1">
+                        <span id="id1">id</span>
+                        <a href="">分享</a>
+                    </div>
+                    <div class="line2" id="content1">
+                        内容
+                    </div>
+                    <div class="line3">
+                        <span id="time1">time</span>
+                        <span>0赞 回复</span>
+                    </div>
+                </div>
+            </div>
+            <hr id="line2">
+            <div class="inner">
+                <img src="images/logo2.jpg" width="60px" height="60px" alt="">
+                <div class="right">
+                    <div class="line1">
+                        <span id="id2">id</span>
+                        <a href="">分享</a>
+                    </div>
+                    <div class="line2" id="content2">
+                        内容
+                    </div>
+                    <div class="line3">
+                        <span id="time2">time</span>
+                        <span>0赞 回复</span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="inner">
+                <img src="images/logo2.jpg" width="60px" height="60px" alt="">
+                <div class="right">
+                    <div class="line1">
+                        <span id="id3">id</span>
+                        <a href="">分享</a>
+                    </div>
+                    <div class="line2" id="content3">
+                        内容
+                    </div>
+                    <div class="line3">
+                        <span id="time3">time</span>
+                        <span>0赞 回复</span>
+                    </div>
+                </div>
+            </div>
+            <hr id="line3">
+        </div>
+        <div class="page">
+            <ul id="page1">
+                <li><a href="">1</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var play_button = document.getElementsByClassName("play_button")[0];
+    var progress = document.getElementsByClassName("progress")[0];
+    var bar = document.getElementsByClassName("bar")[0];
+    var playTime = document.getElementsByClassName("playTime")[0];
+    var sound = document.getElementsByClassName("sound")[0];
+    var mymusic = document.getElementById("mymusic");
+    var cover = document.getElementsByClassName("cover")[0];
+    var click = true;
+    var time,now,b,c,d;
+    play_button.onclick = function() {
+        if(click){
+            play_button.style.backgroundPosition = "-207px -48px";
+            mymusic.play();
+            click = false;
+            time = setInterval(function(){
+                now = (mymusic.currentTime/mymusic.duration)*300;
+                progress.style.marginLeft = parseInt(now) + "px";
+                d = parseInt((mymusic.currentTime/mymusic.duration)*100);
+                bar.style.backgroundImage = "linear-gradient(90deg,#ffcd2d 0%,#ffcd2d "+ d + "%,rgb(187, 193, 197) "+ d +"%,rgb(187, 193, 197) "+ parseInt(1-d) +"%)";
+                b = parseInt(mymusic.currentTime/60);
+                c = parseInt(mymusic.currentTime - (b*60));
+                if (b == 0){
+                    if(c < 10){
+                    playTime.innerHTML = "00:0" + c;
+                    }else{
+                    playTime.innerHTML = "00:" + c;
+                    }
+                }else if(0 < b < 10){           
+                    if(c < 10){
+                    playTime.innerHTML = "0" + b + ":" + "0" + c ;
+                    }else{
+                    playTime.innerHTML ="0" + b + ":" + c;
+                    }
+                }else{
+                    if(c < 10){
+                    playTime.innerHTML = b + ":" + "0" + c ;
+                    }else{
+                    playTime.innerHTML = b + ":" + c;
+                    }
+                }
+                if(mymusic.currentTime == mymusic.duration){
+                    playTime.innerHTML = "00:00";
+                    progress.style.marginLeft = "0px";
+                    play_button.style.backgroundPosition = "-162px 0px";
+                    bar.style.backgroundImage = "linear-gradient(90deg,rgb(187, 193, 197) 0%, rgb(187, 193, 197) 100%)"
+                }  
+            },1000)
+        }else{
+            mymusic.pause();
+            clearInterval(time);
+            play_button.style.backgroundPosition = "-162px 0px";
+            click = true;
+        }
+    }
+    sound.onclick = function() {
+        if(click) {
+            mymusic.volume = 0.0;
+            click = false;
+        }else {
+            mymusic.volume = 1.0;
+            click = true;
+        }
+    } 
+    var num1 = document.getElementById("num");
+    function wordStatic(obj){
+        var num = obj.value.length;
+        if(num <= 0){
+            num = 0;
+        }
+        num1.innerHTML = "已输入" + num + "个字";
+    }
+    var submit = document.getElementsByClassName("submit")[0];
+    var textArea = document.getElementById("textArea");
+    var i = 1;
+    var j;
+    submit.onclick = function() {
+        function time2() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hh = date.getHours();         
+            var mm = date.getMinutes();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (day >= 0 && day <= 9) {
+                day = "0" + day;
+            }
+            if(hh < 10) {
+                hh = "0" + hh;
+            }
+            if (mm < 10) {
+                mm = "0" + mm;
+            }
+            var now = year + "-" + month + "-" + day +  " " + hh + ":" + mm;
+            return now;
+        }  
+        var time1 = time2();
+        var con = textArea.value;
+        if(!window.localStorage) {
+            alert("浏览器不支持本地存储");
+            return false;
+        }else{
+            var data = {
+                id:"id",
+                content:con,
+                time:time1
+            };
+            var d = JSON.stringify(data);           
+            localStorage['data'+i] = d;
+        }
+        i++;
+        localStorage["i"] = i;
+        console.log(i);
+    }
+    var id1 = document.getElementById("id1");
+    var content1 = document.getElementById("content1");
+    var time1 = document.getElementById("time1");
+    var id2 = document.getElementById("id2");
+    var content2 = document.getElementById("content2");
+    var time2 = document.getElementById("time2");
+    var id3 = document.getElementById("id3");
+    var content3 = document.getElementById("content3");
+    var time3 = document.getElementById("time3");
+    var show = document.getElementsByClassName("show")[0];
+    var inner2 = document.getElementsByClassName("inner")[1];
+    var inner3 = document.getElementsByClassName("inner")[2];
+    var line2 = document.getElementById("line2");
+    var line3 = document.getElementById("line3");
+    window.onload = function() {
+        j = 50;
+        if(j == 1) {
+            show.removeChild(inner2);
+            show.removeChild(line2);
+            show.removeChild(inner3);
+            show.removeChild(line3);
+        }
+        if(j == 2) {
+            show.removeChild(inner3);
+            show.removeChild(line3);
+        }
+        var page1 = document.getElementById("page1");
+        if(j > 3) {
+            if(j/3 < 9){
+                for(var z=1;z<j/3;z++){
+                    var newli = document.createElement("li");
+                    var newa = document.createElement("a");
+                    newa.innerHTML = z+1;
+                    newli.onclick = "set_page(this)";
+                    newli.appendChild(newa);
+                    page1.appendChild(newli);
+                }
+            }
+            if(j / 3 > 9){
+                for(var z=1;z<3;z++){
+                    var newli = document.createElement("li");
+                    var newa = document.createElement("a");
+                    newa.innerHTML = z+1;
+                    newli.onclick = "set_page(this)";
+                    newli.appendChild(newa);
+                    page1.appendChild(newli);
+                }
+                var newspan = document.createElement("span");
+                newspan.innerHTML = "……"
+                page1.appendChild(newspan);
+                var newli = document.createElement("li");
+                var newa = document.createElement("a");
+                newa.innerHTML = j/3;
+                newli.onclick = "set_page(this)";
+                newli.appendChild(newa);
+                page1.appendChild(newli);
+            }
+        }
+        var json1 = localStorage.getItem("data1"); 
+        var jsonObj1 = JSON.parse(json1);
+        id1.innerHTML = jsonObj1.id;
+        time1.innerHTML = jsonObj1.time;
+        content1.innerHTML = jsonObj1.content;
+        var json2 = localStorage.getItem("data2"); 
+        var jsonObj2 = JSON.parse(json2);
+        id2.innerHTML = jsonObj2.id;
+        time2.innerHTML = jsonObj2.time;
+        content2.innerHTML = jsonObj2.content;
+        var json3 = localStorage.getItem("data3"); 
+        var jsonObj3 = JSON.parse(json3);
+        id3.innerHTML = jsonObj3.id;
+        time3.innerHTML = jsonObj3.time;
+        content3.innerHTML = jsonObj3.content;
+    }
+    function set_page(input) {
+        if(j % 3 == 1) {
+            show.removeChild(inner2);
+            show.removeChild(line2);
+            show.removeChild(inner3);
+            show.removeChild(line3);
+        }
+        if(j % 3 == 2) {
+            show.removeChild(inner3);
+            show.removeChild(line3);
+        }
+        var x = input.innerHTML;
+        var json1 = localStorage.getItem("data"+(x*3-2)); 
+        var jsonObj1 = JSON.parse(json1);
+        id1.innerHTML = jsonObj1.id;
+        time1.innerHTML = jsonObj1.time;
+        content1.innerHTML = jsonObj1.content;
+        var json2 = localStorage.getItem("data"+(x*3-1)); 
+        var jsonObj2 = JSON.parse(json2);
+        id2.innerHTML = jsonObj2.id;
+        time2.innerHTML = jsonObj2.time;
+        content2.innerHTML = jsonObj2.content;
+        var json3 = localStorage.getItem("data"+x*3); 
+        var jsonObj3 = JSON.parse(json3);
+        id3.innerHTML = jsonObj3.id;
+        time3.innerHTML = jsonObj3.time;
+        content3.innerHTML = jsonObj3.content;
+    }
+</script>
+</html>
